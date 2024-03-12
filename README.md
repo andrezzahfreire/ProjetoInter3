@@ -1,6 +1,6 @@
 <div align="center">
   <h1 align="center">
-    [DataFut]
+    DataFut
     <br />
     <br />
     <a href="[URL do Projeto]">
