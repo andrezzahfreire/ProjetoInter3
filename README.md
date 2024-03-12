@@ -26,11 +26,26 @@
 
 # Descrição do Projeto
 
-[Descrição detalhada do projeto de software, incluindo sua finalidade e funcionalidades principais]
+<b>- Projeto de Software:</b>
+Um site baseado em sites de jogos e apostas como por exemplo, sofascore, cartola, blaze, entre outros, que visa análisar partidas passadas e futuras de futebol, utilizando dados raspados.
+
+<b>- Finalidade:</b>
+  - Analisar e documentar jogos passados e com base nessas análises iremos prever possíveis resultados de futuros jogos.
+
+<b>- Funcionalidades principais:</b>
+  - Raspagem e processamento de dados
+    - De jogos antigos
+    - De jogos recentes
+  - Predição de jogos e possíveis resultados
 
 # :hammer_and_wrench: Status do Projeto
+<b>Progresso:</b> 5%
 
-[Status atual do projeto, como "Em desenvolvimento", "Concluído", "Em pausa", etc.]
+<b>Etapa atual:</b>
+O projeto está em processo de idealização
+
+<b>Próxima etapa:</b>
+Wireframe do projeto (Figma)
 
 # :hammer:  Funcionalidades e Demonstração da Aplicação
 
