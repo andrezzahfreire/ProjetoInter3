@@ -56,7 +56,7 @@ Wireframe do projeto (Figma)
 
 # 📁 Acesso ao Projeto
 
-Você pode [acessar o projeto aqui](URL_DO_PROJETO).
+Você pode [acessar o projeto aqui](https://www.figma.com/file/R0l45b7SrWJpOdrCFlJhns/DataFut---Wireframe?type=design&node-id=0%3A1&mode=design&t=zMSAmXy2YUudg5on-1).
 
 # 🚀 Instruções de Instalação
 
