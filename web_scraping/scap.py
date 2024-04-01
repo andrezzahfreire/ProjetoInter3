@@ -2,7 +2,7 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 from tabulate import tabulate
 
-url = "https://fbref.com/pt/comps/24/stats/Serie-A-Estatisticas"
+url = "https://fbref.com/pt/comps/24/2023/stats/2023-Serie-A-estatisticas"
 
 
 driver = webdriver.Chrome()
