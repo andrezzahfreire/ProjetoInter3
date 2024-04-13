@@ -2,9 +2,9 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 from tabulate import tabulate
 import pandas as pd
+import variaveis.py as v
 
-url = "https://fbref.com/pt/comps/24/2023/stats/2023-Serie-A-estatisticas"
-
+url = v.url
 
 driver = webdriver.Chrome()
 
