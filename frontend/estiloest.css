@@ -1,0 +1,14 @@
+.banner {
+    background-color: #560617;
+    padding: 60px 50px;
+    height: 382px;
+}
+
+.caixa {
+    border-radius: 14px;
+    background: #0D0D0D;
+}
+.limitador {
+    max-width: 1200px;
+    margin: 0px auto;
+}
