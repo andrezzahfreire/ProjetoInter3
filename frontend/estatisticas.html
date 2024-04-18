@@ -1,55 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <title>Document</title>
-    <link rel="stylesheet" href="estiloest.css">
+  <title>Datafut</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+        
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+  </style>
 </head>
-
 <body>
-    <div class="limitador">
-        <div class=banner>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h1>Veja as estatísticas</h1>
-                        <h1>Pablo Vegetti</h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <img src="https://s3-alpha-sig.figma.com/img/8be3/8724/16412d2a79155a97229b3b36f1eb7381?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=iNTPw5DFQH~2ZhjnO9Y9eFdO6q8W5y6qVAK5In-N35dUO9jHNGunPB2nYNMAgpMhUPsXdBwXiCIT~QOmYDM6xxcoKVBcOj9Z2L1M3po0sW~sVD-3-kZTjmBMFS18L2hIw31kgcYg~lPFBTbIFheAU60t07sL~rTS-UzmL0OONOx9lO6AWaJvqDkmb5cRvWURwtmv~piYujkHnydKU5oFJS4p6SbZ87Zw03A8815cKRaa4WO9mu0S0Dh-Ru0YuanUrfFX61RP1son4CsSrhT-d4dmbMxmiV7e8nPL~Dtn1v~xJGxzgwP8Pw0FJdHKQ7HdKx1j1pxsEI~Rt1VF06wl7A__"
-                            alt="foto pablo vegetti" style="width: 501.358px; height: 1020.992px; flex-shrink: 0;">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="dados">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="caixa">
-                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <p>oi andrezza</p>
-                    </div>
-                    <div class="col-sm-3">
-                        <p>oi andrezza</p>
-                    </div>
-                    <div class="col-sm-3">
-                        <p>oi andrezza</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
 
-</html>
+<nav class="navbar navbar-inverse visible-xs">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Dashboard</a></li>
+        <li><a href="#">icone</a></li>
+        <li><a href="#">icone</a></li>
+        <li><a href="#">icone</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav hidden-xs">
+      <h2>Logo</h2>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Dashboard</a></li>
+        <li><a href="#section2">icone</a></li>
+        <li><a href="#section3">icone</a></li>
+        <li><a href="#section3">icone</a></li>
+      </ul><br>
+    </div>
+    <br>
+    
