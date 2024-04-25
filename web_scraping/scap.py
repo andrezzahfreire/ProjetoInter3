@@ -22,13 +22,15 @@ for site in url :
     driver.quit()
 
     table = soup.find("table", id= id[url.index(site)])
-    df = pd.concat([df, pd.read_html(str(table), decimal=',', thousands='.')[0]], ignore_index=True)
-    df.head()
-    print(df)
+    df = pd.concat([df, pd.read_html(str(table), decimal=',', thousands='.', header=1)[0]], ignore_index=True)
+    df = df.loc[df['Class.'] != 'Class.']
+    df.to_csv('scrap.csv', index=False)
     
+    headers = {
+        'Content-type': 'application/json'
+    }
     session = req.Session()
     for index, row in df.iterrows():
-        print(row[0])
         dado = {
             "jogador": row['Jogador'],  
             "nacionalidade": row['Nação'],
@@ -56,9 +58,9 @@ for site in url :
             "progressao_passada": row['PrgP'],    # Progressão passada
             "progressao_recebida": row['PrgR'],   # Progressão recebida
         }
-    session.post("http://localhost:8080/jogadores", dado)
-    print(dado)
-
+        session.post(
+            "http://localhost:8080/jogadores", json=dado
+        )
+        print(dado)
     
     
-
