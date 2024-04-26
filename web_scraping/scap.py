@@ -4,6 +4,7 @@ from tabulate import tabulate
 import pandas as pd
 import variaveis as v
 import requests as req
+import json
 
 
 url = v.url
@@ -17,7 +18,8 @@ for site in url :
 
     html_content = driver.page_source
 
-    soup = BeautifulSoup(html_content, "html.parser")
+    html_content = html_content.replace('>Pos.<', '>Posicao<')
+    soup = BeautifulSoup( html_content, "html.parser")
 
     driver.quit()
 
@@ -30,11 +32,12 @@ for site in url :
         'Content-type': 'application/json'
     }
     session = req.Session()
-    for index, row in df.iterrows():
+    for (index, row) in df.iterrows():
+        print(row)
         dado = {
             "jogador": row['Jogador'],  
             "nacionalidade": row['Nação'],
-            "posicao": row['Pos.'],  
+            "posicao": row['Posicao'],  
             "equipe": row['Equipe'], 
             "idade": row['Idade'], 
             "nascimento": row['Nascimento'],
@@ -59,7 +62,7 @@ for site in url :
             "progressao_recebida": row['PrgR'],   # Progressão recebida
         }
         session.post(
-            "http://localhost:8080/jogadores", json=dado
+            "http://localhost:8080/jogadores", json=json.dumps(dado)
         )
         print(dado)
     
