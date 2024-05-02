@@ -359,9 +359,14 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="banner" style="background-color: #560617; padding:10px 20px 10px 20px; border-radius: 10px; overflow-y: hidden; margin-bottom: 1.5rem; ">
-                        <h1 class="textBanner" style= "font-family: Six Caps; color: #fff;  font-size: 70px; margin-bottom: 0%;line-height: 1.15;">VEJA AS ESTATÍSTICAS</h1>
-                        <h1 class="textBanner" style= "font-family: Six Caps; color: #F5C451;  font-size: 70px;line-height: 1.05;">PABLO VEGETTI</h1>
+                    <div class="banner"
+                        style="background-color: #560617; padding:10px 20px 10px 20px; border-radius: 10px; overflow-y: hidden; margin-bottom: 1.5rem; ">
+                        <h1 class="textBanner"
+                            style="font-family: Six Caps; color: #fff;  font-size: 70px; margin-bottom: 0%;line-height: 1.15;">
+                            VEJA AS ESTATÍSTICAS</h1>
+                        <h1 class="textBanner"
+                            style="font-family: Six Caps; color: #F5C451;  font-size: 70px;line-height: 1.05;">PABLO
+                            VEGETTI</h1>
 
                         <!-- <h1 class="h3 mb-0 text-gray-800">Dashboard</h1> -->
                         <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
@@ -514,7 +519,10 @@
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
+                                    <div>
+                                        <canvas id="myChart"></canvas>
+                                    </div>
+                                    <!-- <div class="chart-pie pt-4 pb-2">
                                         <canvas id="myPieChart"></canvas>
                                     </div>
                                     <div class="mt-4 text-center small">
@@ -527,9 +535,9 @@
                                         <span class="mr-2">
                                             <i class="fas fa-circle text-info"></i> Referral
                                         </span>
-                                    </div>
+                                    </div> -->
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -750,7 +758,10 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
-
+    <script src="path/to/chartjs/dist/chart.umd.js"></script>
+    <script>
+        const myChart = new Chart(ctx, {...});
+    </script>
 </body>
 
 </html>
