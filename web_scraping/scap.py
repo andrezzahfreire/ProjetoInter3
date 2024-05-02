@@ -62,7 +62,51 @@ for i, url in enumerate(urls): # itera sobre a lista de urls, devolve tuplas (IN
         # PASSO A PASSO:
         for j, element in enumerate(row): # PARA CADA (numero do elemento & elemento) NA LINHA
             dado.update({dfheaders[j]: element}) # ADICIONA UMA NOVA CHAVE NO DICIONARIO, SENDO {listaDeHeaders[numeroDoElemento]: elementoDaLinha}
+            
+        dado = {
+            "Class.": int(dado["Class."]),
+            "Jogador": "Bruno Zapelli",
+            "Nação": "ar ARG",
+            "Pos.": "LT,AT",
+            "Equipe": "Ath Paranaense",
+            "Idade": int(dado["Idade"]),
+            "Nascimento": int(dado["Idade"]),
+            "indices": {
+                "MP": 21,
+                "Inícios": 13,
+                "Min.": "1.143",
+                "90s": "12.7",
+                "Gols": "2",
+                "Assis.": "2",
+                "G+A": "4",
+                "G-PB": "2",
+                "PB": "0",
+                "PT": "0",
+                "CrtsA": "0",
+                "CrtV": "0",
+                "xG": "2.5",
+                "npxG": "2.5",
+                "xAG": "1.8",
+                "npxG+xAG": "43",
+                "PrgC": "35",
+                "PrgP": "72",
+                "PrgR": "71",
+                "Gols.1": "016",
+                "Assis..1": "016",
+                "G+A.1": "031",
+                "G-PB.1": "016",
+                "G+A-PB": "031",
+                "xG.1": "019",
+                "xAG.1": "014",
+                "xG+xAG": "034",
+                "npxG.1": "019",
+                "npxG+xAG.1": "034",
+            },
+            "Partidas": "Partidas",
+        }
 
         print(json.dumps(dado, ensure_ascii=False))
         # POSTA O DICIONARIO NO SERVIDOR
         #sesh.post("http://localhost:8080/jogadores", json=json.dumps(dado))
+        
+        
