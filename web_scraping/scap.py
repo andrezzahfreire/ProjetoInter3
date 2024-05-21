@@ -4,12 +4,13 @@ import pandas as pd # mexe com tabelas
 import requests # acessa urls e extrai o codigo deles
 import json # processa dicionarios em formato acessivel para sites ou progWeb
 from parsers import *
+from constantes import *
 
 
 # LISTAS DE URLS E IDS DAS TABELAS
 mapa_urls = {
     0: {
-        "url": "https://fbref.com/pt/comps/24/2023/stats/2023-Serie-A-estatisticas",
+        "url": f"https://{SITE}/pt/comps/24/2023/stats/2023-Serie-A-estatisticas",
         "table_id": "stats_standard",
         "parser": payload_standard
     },
@@ -99,5 +100,5 @@ for i, info in mapa_urls.items(): # itera sobre a lista de urls, devolve tuplas 
         dado = info['parser'](dado)
         # POSTA O DICIONARIO NO SERVIDOR
         sesh.post("http://localhost:8080/jogadores", json=dado)
-"""         print(list(dado['indices'].keys()))
-        break """
+        print(list(dado['indices'].keys()))
+        break 
