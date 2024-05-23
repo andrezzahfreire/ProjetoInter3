@@ -10,44 +10,50 @@ from constantes import *
 # LISTAS DE URLS E IDS DAS TABELAS
 mapa_urls = {
     0: {
-        "url": f"https://{SITE}/pt/comps/24/2023/stats/2023-Serie-A-estatisticas",
+        "url": f"https://fbref.com/pt/comps/24/2023/stats/2023-Serie-A-estatisticas",
         "table_id": "stats_standard",
-        "parser": payload_standard
+        "parser": payload_standard,
+        "skip": True
     },
     1: {
         "url": "https://fbref.com/pt/comps/24/2023/passing/2023-Serie-A-estatisticas",
         "table_id": "stats_passing",
-        "parser": payload_passing
+        "parser": payload_passing,
+        "skip": True
     },
     2: {
         "url": "https://fbref.com/pt/comps/24/2023/keepersadv/2023-Serie-A-estatisticas",
         "table_id": "stats_keeper_adv",
+        "parser": payload_keepersadv,
+        "skip": True
     },
     3: {
         "url": "https://fbref.com/pt/comps/24/2023/shooting/2023-Serie-A-estatisticas",
         "table_id": "stats_shooting",
+        "parser": payload_shooting,
+        "skip": True
     },
     4: {
-        "url": "https://fbref.com/pt/comps/24/2023/passing/2023-Serie-A-estatisticas",
-        "table_id": "stats_passing",
-    },
-    5: {
         "url": "https://fbref.com/pt/comps/24/2023/passing_types/2023-Serie-A-estatisticas",
         "table_id": "stats_passing_types",
+        "parser": payload_passing_types,
+        "skip": True
     },
-    6: {
+    5: {
         "url": "https://fbref.com/pt/comps/24/2023/gca/2023-Serie-A-estatisticas",
         "table_id": "stats_gca",
+        "parser": payload_gca,
+        "skip": False
     },
-    7: {
+    6: {
         "url": "https://fbref.com/pt/comps/24/2023/possession/2023-Serie-A-estatisticas",
         "table_id": "stats_possession",
     },
-    8: {
+    7: {
         "url": "https://fbref.com/pt/comps/24/2023/playingtime/2023-Serie-A-estatisticas",
         "table_id": "stats_playing_time",
     },
-    9: {
+    8: {
         "url": "https://fbref.com/pt/comps/24/2023/misc/2023-Serie-A-estatisticas",
         "table_id": "stats_misc",
     },
@@ -60,6 +66,7 @@ for i, info in mapa_urls.items(): # itera sobre a lista de urls, devolve tuplas 
     if 'parser' not in info or info['parser'] == None:
         print(f"{info['url']}: pulado")
         continue
+    if 'skip' in info and info['skip']: continue
     
     print(f"{info['url']}: importando")
     
@@ -99,6 +106,5 @@ for i, info in mapa_urls.items(): # itera sobre a lista de urls, devolve tuplas 
             
         dado = info['parser'](dado)
         # POSTA O DICIONARIO NO SERVIDOR
-        sesh.post("http://localhost:8080/jogadores", json=dado)
-        print(list(dado['indices'].keys()))
-        break 
+        print(dado)
+       # sesh.post("http://localhost:8080/jogadores", json=dado)
