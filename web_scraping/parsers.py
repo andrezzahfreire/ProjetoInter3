@@ -130,7 +130,7 @@ def payload_keepersadv(dado):
             
             "Cmp": toInt(dado["Cmp"]),
             "Att": toInt(dado["Att"]),
-            "Cmp%": toInt(dado["Cmp%"]),
+            "Cmp%": toFloat(dado["Cmp%"]),
             
             "Tent. de passes (Gol.)": toInt(dado["Tent. de passes (Gol.)"]),
             "Lançamentos%": toFloat(dado["Lançamentos%"]),
@@ -246,5 +246,127 @@ def payload_gca(dado):
             "SCA": toInt(dado["SCA"]),   
             "SCA": toInt(dado["SCA"]),   
             "SCA": toInt(dado["SCA"]),   
+        }
+    }
+    
+def payload_possession(dado): 
+    return {
+        "Class.": toFloat(dado["Class."]),
+        "jogador": toStr(dado["Jogador"]),
+        "nacionalidade": toStr(dado["Nação"]),
+        "posicao": toStr(dado["Pos."]),
+        "equipe": toStr(dado["Equipe"]),
+        "idade": toInt(dado["Idade"]),
+        "nascimento": toInt(dado["Nascimento"]),
+        "indices": {
+            "90s": toFloat(dado["90s"]),
+            
+            "Contatos": toInt(dado["Contatos"]),
+            "Def Pen": toInt(dado["Def Pen"]),
+            "Terço Def": toInt(dado["Terço Def"]),
+            "Terço Central": toInt(dado["Terço Central"]),
+            "Terço de Ataque": toInt(dado["Terço de Ataque"]),
+            "Att Pen": toInt(dado["Att Pen"]),
+            "Em jogo": toInt(dado["Em jogo"]),
+            
+            "Tent": toInt(dado["Tent"]),
+            "Suc": toInt(dado["Suc"]),
+            "Suc%": toFloat(dado["Suc%"]),
+            "Tkld": toInt(dado["Tkld"]),
+            "Tkld%": toFloat(dado["Tkld%"]),
+            
+            "Conduções": toInt(dado["Conduções"]),
+            "DistTot": toInt(dado["DistTot"]),
+            "DistPrg": toInt(dado["DistPrg"]),
+            "PrgC": toInt(dado["PrgC"]),
+            "1/3": toInt(dado["1/3"]),
+            "CPA": toInt(dado["CPA"]),
+            "Perda de Domínio": toInt(dado["Perda de Domínio"]),
+            "Dis": toInt(dado["Dis"]),
+            
+            "Rec": toInt(dado["Rec"]),
+            "PrgR": toInt(dado["PrgR"]),
+        }
+    }
+    
+def payload_playingtime(dado): 
+    return {
+        "Class.": toFloat(dado["Class."]),
+        "jogador": toStr(dado["Jogador"]),
+        "nacionalidade": toStr(dado["Nação"]),
+        "posicao": toStr(dado["Pos."]),
+        "equipe": toStr(dado["Equipe"]),
+        "idade": toInt(dado["Idade"]),
+        "nascimento": toInt(dado["Nascimento"]),
+        "indices": {
+            "MP": toInt(dado["MP"]),
+            "Min.": toFloat(dado["Min."]),
+            "Mn/MP": toInt(dado["Mn/MP"]),
+            "Min%": toFloat(dado["Min%"]),
+            "90s": toFloat(dado["90s"]),
+            
+            "Inícios": toInt(dado["Inícios"]),
+            "Mn/Início": toInt(dado["Mn/Início"]),
+            "Compl": toInt(dado["Compl"]),
+            
+            "Subs.": toInt(dado["Subs."]),
+            "Mn/Sub": toInt(dado["Mn/Sub"]),
+            "unSub": toInt(dado["unSub"]),
+            
+            "PPM": toFloat(dado["PPM"]),
+            "onG": toInt(dado["onG"]),
+            "onGA": toInt(dado["onGA"]),
+            "+/-": toInt(dado["+/-"]),
+            "+/-90": toFloat(dado["+/-90"]),
+            "Ligado-Desligado": toFloat(dado["Ligado-Desligado"]),
+            
+            "onxG": toFloat(dado["onxG"]),
+            "onxGA": toFloat(dado["onxGA"]),
+            "xG+/-": toFloat(dado["xG+/-"]),    
+            "xG+/-90": toFloat(dado["xG+/-90"]),
+            "Ligado-Desligado.1": toFloat(dado["Ligado-Desligado.1"]),
+        }
+    }
+    
+def payload_misc(dado):
+    return {
+        'jogador': dado.get('Jogador', 'Desconhecido'),
+        'nacionalidade': dado.get('Nacionalidade', 'Desconhecido'),
+        'equipe': dado.get('Equipe', 'Desconhecido'),
+        'idade': dado.get('Idade', 'Desconhecido'),
+        'nascimento': dado.get('Nascimento', 'Desconhecido'),
+        'posicao': dado.get('Posicao', 'Desconhecido'),
+    }
+    
+
+def payload_misc(dado): 
+    return {
+        "Class.": toFloat(dado["Class."]),
+        "jogador": toStr(dado["Jogador"]),
+        "nacionalidade": toStr(dado["Nação"]),
+        "posicao": toStr(dado["Pos."]),
+        "equipe": toStr(dado["Equipe"]),
+        "idade": toInt(dado["Idade"]),
+        "nascimento": toInt(dado["Nascimento"]),
+        "indices": {
+            "90s": toFloat(dado["90s"]),
+            
+            "CrtsA": toInt(dado["CrtsA"]),
+            "CrtV": toInt(dado["CrtV"]),
+            "2CrdY": toInt(dado["2CrdY"]),
+            "Fts": toInt(dado["Fts"]),
+            "FltsP": toInt(dado["FltsP"]),
+            "Desativado": toInt(dado["Desativado"]),
+            "Crz": toInt(dado["Crz"]),
+            "Crts": toInt(dado["Crts"]),
+            "TklW": toInt(dado["TklW"]),
+            "Pênaltis convertidos": toInt(dado["Pênaltis convertidos"]),
+            "PKcon": toInt(dado["PKcon"]),
+            "OG": toInt(dado["Nascimento"]),
+            "Recuperação": toInt(dado["Recuperação"]),
+            
+            "Ganhos": toInt(dado["Ganhos"]),
+            "Perdas": toInt(dado["Perdas"]),
+            "Ganhos%": toFloat(dado["Ganhos%"]),
         }
     }

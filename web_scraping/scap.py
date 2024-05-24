@@ -10,10 +10,10 @@ from constantes import *
 # LISTAS DE URLS E IDS DAS TABELAS
 mapa_urls = {
     0: {
-        "url": f"https://fbref.com/pt/comps/24/2023/stats/2023-Serie-A-estatisticas",
+        "url": "https://fbref.com/pt/comps/24/2023/stats/2023-Serie-A-estatisticas",
         "table_id": "stats_standard",
         "parser": payload_standard,
-        "skip": True
+        "skip": False
     },
     1: {
         "url": "https://fbref.com/pt/comps/24/2023/passing/2023-Serie-A-estatisticas",
@@ -43,19 +43,25 @@ mapa_urls = {
         "url": "https://fbref.com/pt/comps/24/2023/gca/2023-Serie-A-estatisticas",
         "table_id": "stats_gca",
         "parser": payload_gca,
-        "skip": False
+        "skip": True
     },
     6: {
         "url": "https://fbref.com/pt/comps/24/2023/possession/2023-Serie-A-estatisticas",
         "table_id": "stats_possession",
+        "parser": payload_possession,
+        "skip": True
     },
     7: {
         "url": "https://fbref.com/pt/comps/24/2023/playingtime/2023-Serie-A-estatisticas",
         "table_id": "stats_playing_time",
+        "parser": payload_playingtime,
+        "skip": True
     },
     8: {
         "url": "https://fbref.com/pt/comps/24/2023/misc/2023-Serie-A-estatisticas",
         "table_id": "stats_misc",
+        "parser": payload_misc,
+        "skip": True
     },
 }
 
@@ -107,4 +113,4 @@ for i, info in mapa_urls.items(): # itera sobre a lista de urls, devolve tuplas 
         dado = info['parser'](dado)
         # POSTA O DICIONARIO NO SERVIDOR
         print(dado)
-       # sesh.post("http://localhost:8080/jogadores", json=dado)
+    sesh.post("http://localhost:8080/jogadores", json=dado)
