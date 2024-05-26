@@ -2,10 +2,8 @@
 from bs4 import BeautifulSoup as bs # modulo para processar html
 import pandas as pd # mexe com tabelas
 import requests # acessa urls e extrai o codigo deles
-import json # processa dicionarios em formato acessivel para sites ou progWeb
 from parsers import *
 from constantes import *
-
 
 # LISTAS DE URLS E IDS DAS TABELAS
 mapa_urls = {
@@ -13,66 +11,54 @@ mapa_urls = {
         "url": "https://fbref.com/pt/comps/24/2023/stats/2023-Serie-A-estatisticas",
         "table_id": "stats_standard",
         "parser": payload_standard,
-        "skip": False
     },
     1: {
         "url": "https://fbref.com/pt/comps/24/2023/passing/2023-Serie-A-estatisticas",
         "table_id": "stats_passing",
         "parser": payload_passing,
-        "skip": True
     },
     2: {
         "url": "https://fbref.com/pt/comps/24/2023/keepersadv/2023-Serie-A-estatisticas",
         "table_id": "stats_keeper_adv",
         "parser": payload_keepersadv,
-        "skip": True
     },
     3: {
         "url": "https://fbref.com/pt/comps/24/2023/shooting/2023-Serie-A-estatisticas",
         "table_id": "stats_shooting",
         "parser": payload_shooting,
-        "skip": True
     },
     4: {
         "url": "https://fbref.com/pt/comps/24/2023/passing_types/2023-Serie-A-estatisticas",
         "table_id": "stats_passing_types",
         "parser": payload_passing_types,
-        "skip": True
     },
     5: {
         "url": "https://fbref.com/pt/comps/24/2023/gca/2023-Serie-A-estatisticas",
         "table_id": "stats_gca",
         "parser": payload_gca,
-        "skip": True
     },
     6: {
         "url": "https://fbref.com/pt/comps/24/2023/possession/2023-Serie-A-estatisticas",
         "table_id": "stats_possession",
         "parser": payload_possession,
-        "skip": True
     },
     7: {
         "url": "https://fbref.com/pt/comps/24/2023/playingtime/2023-Serie-A-estatisticas",
         "table_id": "stats_playing_time",
         "parser": payload_playingtime,
-        "skip": True
     },
     8: {
         "url": "https://fbref.com/pt/comps/24/2023/misc/2023-Serie-A-estatisticas",
         "table_id": "stats_misc",
         "parser": payload_misc,
-        "skip": True
     },
 }
 
 sesh = requests.Session() # inicializa uma sessao no modulo requests
 
+dados_gerais = []
+
 for i, info in mapa_urls.items(): # itera sobre a lista de urls, devolve tuplas (INDICE, VALOR) da lista
-    
-    if 'parser' not in info or info['parser'] == None:
-        print(f"{info['url']}: pulado")
-        continue
-    if 'skip' in info and info['skip']: continue
     
     print(f"{info['url']}: importando")
     
@@ -90,11 +76,9 @@ for i, info in mapa_urls.items(): # itera sobre a lista de urls, devolve tuplas 
     
     # pega os nomes (headers) das colunas da tabela (.columns) e converte em uma lista (.tolist())
     dfheaders = df.columns.tolist()
-#    print(df)
     
     # roubei da net :)  remove os headers duplicados magicamente, n sei como funciona
     df1 = df[df.iloc[:, 0] != df.columns[0]]
-    # print(dfheaders)
     
     # iterando sobre as linhas do dataframe
     for (index, row) in df1.iterrows():
@@ -106,11 +90,22 @@ for i, info in mapa_urls.items(): # itera sobre a lista de urls, devolve tuplas 
         dado = {}
         
         # itera sobre os elementos da linha, devolvendo tuplas (INDICE, VALOR) da lista
-        # PASSO A PASSO:
         for j, element in enumerate(row): # PARA CADA (numero do elemento & elemento) NA LINHA
             dado.update({dfheaders[j]: element}) # ADICIONA UMA NOVA CHAVE NO DICIONARIO, SENDO {listaDeHeaders[numeroDoElemento]: elementoDaLinha}
             
         dado = info['parser'](dado)
+        # Adiciona o dicionário à lista de dados gerais
+        dados_gerais.append(dado)
         # POSTA O DICIONARIO NO SERVIDOR
         print(dado)
-    sesh.post("http://localhost:8080/jogadores", json=dado)
+        #sesh.post("http://localhost:8080/jogadores", json=dado)
+
+# Cria um DataFrame com todos os dados coletados
+#df_geral = pd.DataFrame(dados_gerais)
+
+# Reordena as colunas do DataFrame
+ordem_colunas = ["jogador", "nacionalidade", "posicao", "equipe", "idade", "nascimento", "indices"]
+#df_geral = df_geral[ordem_colunas]
+
+# Salva o DataFrame em um arquivo CSV
+#df_geral.to_csv("dados_jogadoress.csv", index=False, encoding='utf-8')

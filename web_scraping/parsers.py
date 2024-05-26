@@ -4,14 +4,6 @@ def toStr(text):
     if type(text) != str: return None
     return text.strip()
 
-def toFloat(text):
-    if type(text) in [float, int]:
-        if math.isnan(text): return None
-        return text
-    text = text.strip().upper()
-    if len(text) == 0: return None
-    return float(text)
-
 def toInt(text):
     if type(text) in [float, int]:
         if math.isnan(text): return None
@@ -20,9 +12,18 @@ def toInt(text):
     if len(text) == 0: return None
     return int(text)
 
+def toFloat(text):
+    if type(text) in [float, int]:
+        if math.isnan(text): return None
+        return text
+    text = text.strip().upper()
+    if len(text) == 0: return None
+    return float(text)
+
+
 def payload_standard(dado):
     return {
-        # "Class.": toFloat(dado["Class."]),
+        #"Class.": toFloat(dado["Class."]),
         "jogador": toStr(dado["Jogador"]),
         "nacionalidade": toStr(dado["Nação"]),
         "posicao": toStr(dado["Pos."]),
@@ -66,12 +67,12 @@ def payload_standard(dado):
 
 def payload_passing(dado):
     return {
-        "Class.": toFloat(dado["Class."]),
-        "Jogador": toStr(dado["Jogador"]),
-        "Nação": toStr(dado["Nação"]),
-        "Pos.": toStr(dado["Pos."]),
-        "Equipe": toStr(dado["Equipe"]),
-        "Idade": toInt(dado["Idade"]),
+        #"Class.": toFloat(dado["Class."]),
+        "jogador": toStr(dado["Jogador"]),
+        "nacionalidade": toStr(dado["Nação"]),
+        "posicao": toStr(dado["Pos."]),
+        "equipe": toStr(dado["Equipe"]),
+        "idade": toInt(dado["Idade"]),
         "nascimento": toInt(dado["Nascimento"]),
         "indices": {
             "90s": toFloat(dado["90s"]),
@@ -108,7 +109,7 @@ def payload_passing(dado):
     
 def payload_keepersadv(dado): 
     return {
-        "Class.": toFloat(dado["Class."]),
+        #"Class.": toFloat(dado["Class."]),
         "jogador": toStr(dado["Jogador"]),
         "nacionalidade": toStr(dado["Nação"]),
         "posicao": toStr(dado["Pos."]),
@@ -152,7 +153,7 @@ def payload_keepersadv(dado):
 
 def payload_shooting(dado): 
     return {
-        "Class.": toFloat(dado["Class."]),
+        #"Class.": toFloat(dado["Class."]),
         "jogador": toStr(dado["Jogador"]),
         "nacionalidade": toStr(dado["Nação"]),
         "posicao": toStr(dado["Pos."]),
@@ -185,7 +186,7 @@ def payload_shooting(dado):
     
 def payload_passing_types(dado): 
     return {
-        "Class.": toFloat(dado["Class."]),
+        #"Class.": toFloat(dado["Class."]),
         "jogador": toStr(dado["Jogador"]),
         "nacionalidade": toStr(dado["Nação"]),
         "posicao": toStr(dado["Pos."]),
@@ -218,7 +219,7 @@ def payload_passing_types(dado):
 
 def payload_gca(dado): 
     return {
-        "Class.": toFloat(dado["Class."]),
+        #"Class.": toFloat(dado["Class."]),
         "jogador": toStr(dado["Jogador"]),
         "nacionalidade": toStr(dado["Nação"]),
         "posicao": toStr(dado["Pos."]),
@@ -251,7 +252,7 @@ def payload_gca(dado):
     
 def payload_possession(dado): 
     return {
-        "Class.": toFloat(dado["Class."]),
+        #"Class.": toFloat(dado["Class."]),
         "jogador": toStr(dado["Jogador"]),
         "nacionalidade": toStr(dado["Nação"]),
         "posicao": toStr(dado["Pos."]),
@@ -291,7 +292,7 @@ def payload_possession(dado):
     
 def payload_playingtime(dado): 
     return {
-        "Class.": toFloat(dado["Class."]),
+        #"Class.": toFloat(dado["Class."]),
         "jogador": toStr(dado["Jogador"]),
         "nacionalidade": toStr(dado["Nação"]),
         "posicao": toStr(dado["Pos."]),
@@ -326,22 +327,11 @@ def payload_playingtime(dado):
             "xG+/-90": toFloat(dado["xG+/-90"]),
             "Ligado-Desligado.1": toFloat(dado["Ligado-Desligado.1"]),
         }
-    }
-    
-def payload_misc(dado):
-    return {
-        'jogador': dado.get('Jogador', 'Desconhecido'),
-        'nacionalidade': dado.get('Nacionalidade', 'Desconhecido'),
-        'equipe': dado.get('Equipe', 'Desconhecido'),
-        'idade': dado.get('Idade', 'Desconhecido'),
-        'nascimento': dado.get('Nascimento', 'Desconhecido'),
-        'posicao': dado.get('Posicao', 'Desconhecido'),
-    }
-    
+    }    
 
 def payload_misc(dado): 
     return {
-        "Class.": toFloat(dado["Class."]),
+        #"Class.": toFloat(dado["Class."]),
         "jogador": toStr(dado["Jogador"]),
         "nacionalidade": toStr(dado["Nação"]),
         "posicao": toStr(dado["Pos."]),
