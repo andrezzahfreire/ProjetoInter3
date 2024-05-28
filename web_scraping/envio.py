@@ -7,8 +7,7 @@ csv_path = 'C:/Users/felipe.botelho/Documents/GitHub/ProjetoInter3/web_scraping/
 # Lê o arquivo CSV
 df = pd.read_csv(csv_path)
 
-# Exemplo de envio dos dados para o Spring Boot
-url = 'http://localhost:8080/jogadores'  # Substitua pela URL correta do seu endpoint
+url = 'http://localhost:8080/jogadores'  
 
 # Itera sobre os jogadores e envia cada um como um objeto JSON separado
 for index, jogador in df.iterrows():
