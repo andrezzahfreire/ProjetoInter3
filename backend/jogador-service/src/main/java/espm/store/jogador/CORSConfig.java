@@ -14,7 +14,7 @@ public class CORSConfig {
         CorsConfiguration config = new CorsConfiguration();
         config.addAllowedOriginPattern("*"); // Permitir todas as origens
         config.addAllowedHeader("*"); // Permitir todos os headers
-        config.addAllowedMethod("http://localhost:8080/jogadores"); // Permitir todos os métodos HTTP
+        config.addAllowedMethod("*"); // Permitir todos os métodos HTTP
         config.setAllowCredentials(true); // Permitir credenciais
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

@@ -15,13 +15,13 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor @AllArgsConstructor
 public final class Jogador {
 
-    private String id;
-    private String jogador;  
-    private String nacionalidade;
-    private String posicao;  
-    private String equipe;  
-    private Integer idade; 
-    private Integer nascimento;
-    private List<Indice> indices;
+    public String id;
+    public String jogador;  
+    public String nacionalidade;
+    public String posicao;  
+    public String equipe;  
+    public Integer idade; 
+    public Integer nascimento;
+    public List<Indice> indices;
 
 }

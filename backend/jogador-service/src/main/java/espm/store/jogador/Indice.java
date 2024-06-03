@@ -1,5 +1,6 @@
 package espm.store.jogador;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,11 +14,11 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor @AllArgsConstructor
 public class Indice {
 
-    private String id;
-    private Jogador jogador;
+    public String id;
+    public Jogador jogador;
 
-    private String nome;
-    private Double valor;
-    private String texto;
+    public String nome;
+    public Double valor;
+    public String texto;
 
 }
