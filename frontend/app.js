@@ -2,7 +2,11 @@ const apiUrl = 'http://localhost:8080/jogadores';
 
 async function fetchData() {
     try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(apiUrl, {
+            headers: {
+                'Authorization': 'Basic ' + btoa('user:userPass')
+            }
+        });
         if (!response.ok) {
             throw new Error('Erro ao buscar dados da API');
         }
@@ -28,10 +32,10 @@ async function renderJogadores() {
                                 <p>Idade: ${jogador.idade}</p>
                                 <p>Nascimento: ${jogador.nascimento}</p>
                                  
-                                 <p>Índices:</p>
-                                 <ul>
-                                    ${jogador.indices.map(indice => `<li>${indice.nome}: ${indice.texto ?? indice.valor}</li>`).join('')}
-                                 </ul>`;
+                                <p>Índices:</p>
+                                <ul>
+                                ${jogador.indices.map(indices => `<li>${indices.nome}: ${indices.texto ?? indices.valor}</li>`).join('')}
+                                </ul>`;
 
         jogadoresDiv.appendChild(jogadorDiv);
     });

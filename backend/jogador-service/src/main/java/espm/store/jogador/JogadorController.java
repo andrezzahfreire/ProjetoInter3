@@ -1,6 +1,7 @@
 package espm.store.jogador;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +14,8 @@ public class JogadorController {
     private JogadorService jogadorService;
 
     @GetMapping
-    public List<Jogador> getAllJogadores() { 
-        return jogadorService.findAll();
+    public List<JogadorOut> getAllJogadores() {
+        return jogadorService.findAll().stream().map(JogadorParser::to).collect(Collectors.toList()); 
     }
 
     @PostMapping

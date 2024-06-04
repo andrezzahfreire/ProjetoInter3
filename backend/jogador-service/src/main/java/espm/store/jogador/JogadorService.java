@@ -17,7 +17,7 @@ public class JogadorService {
     private JogadorRepository jogadorRepository;
 
     @Autowired
-    private IndiceRepository indiceRepository;
+    private IndiceService indiceService;
 
     public Jogador create(Jogador jogador) {
         /*
@@ -54,7 +54,7 @@ public class JogadorService {
         for (Indice indice : jogador.indices()) {
             if (indice.texto() == null && indice.valor() == null) continue;
             indice.jogador(salvo);
-            Indice indiceSalvo = indiceRepository.save(new IndiceModel(indice)).to();
+            Indice indiceSalvo = indiceService.create(indice);
             salvo.indices().add(indiceSalvo);
         }
         return salvo;
@@ -65,10 +65,15 @@ public class JogadorService {
     }
 
     public List<Jogador> findAll() {
-        return jogadorRepository.findAll().stream().map(JogadorModel::to).collect(Collectors.toList());
+        List<Jogador> l = jogadorRepository.findAll().stream().map(JogadorModel::to).collect(Collectors.toList());
+        l.forEach(j -> j.indices(indiceService.findByJogador(j.id())));
+        return l;
     }
 
     public Jogador find(@NonNull String id) {
-        return jogadorRepository.findById(id).map(JogadorModel::to).orElse(null);
+        Jogador jogador = jogadorRepository.findById(id).map(JogadorModel::to).orElse(null);
+        if (jogador == null) return null;
+        jogador.indices(indiceService.findByJogador(jogador.id()));
+        return jogador;
     }
 }
