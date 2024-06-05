@@ -1,0 +1,41 @@
+# docker compose up -d --build --force-recreate
+version: '3.8'
+name: store
+
+services:
+
+  db:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=store
+      - POSTGRES_PASSWORD=store
+      - POSTGRES_DB=store
+    volumes:
+      - ./volume/postgres/store/data:/var/lib/postgresql/data
+    restart: always
+    networks:
+      - projeto
+
+  account:
+    build:
+      context: ../jogador-service/
+      dockerfile: Dockerfile
+    image: store-account:latest
+    ports:
+      - 8080:8080
+    environment:
+      # aqui estamos passando as variáveis de ambiente para o container acesso o banco dentro da rede do docker
+      # note que o "db" abaixo e o nome do servico do banco de dados acima
+      - spring.datasource.url=jdbc:postgresql://db:5432/store
+      - spring.datasource.username=store
+      - spring.datasource.password=store
+    depends_on:
+      - db
+    networks:
+      - projeto
+
+networks:
+  projeto:
+    driver: bridge
