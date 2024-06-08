@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+    </style>
 </head>
 
 <body>
@@ -30,10 +33,11 @@
         <div class="container">
             <div class="row">
                 <!-- Goleiros e Atacantes Section -->
-                <div class="col-lg-3">
+                <div class="col-md-3">
                     <div class="card shadow mb-4 custom-card">
                         <div class="card-body">
                             <table class="table table-dark table-hover">
+                                <caption class="table-caption">Goleiros</caption>
                                 <thead>
                                     <tr>
                                         <th>Team</th>
@@ -47,7 +51,7 @@
                                 <tbody>
                                     <!-- Goleiros data goes here -->
                                     <tr>
-                                        <td><img src="https://crests.football-data.org/LIVERPOOL.png" alt="Liverpool" /> Liverpool</td>
+                                        <td>Liverpool</td>
                                         <td>6</td>
                                         <td>2</td>
                                         <td>21</td>
@@ -55,7 +59,7 @@
                                         <td>33</td>
                                     </tr>
                                     <tr>
-                                        <td><img src="https://crests.football-data.org/MANCHESTER-UNITED.png" alt="Man United" /> Man United</td>
+                                        <td>Man United</td>
                                         <td>3</td>
                                         <td>3</td>
                                         <td>24</td>
@@ -63,7 +67,7 @@
                                         <td>33</td>
                                     </tr>
                                     <tr>
-                                        <td><img src="https://crests.football-data.org/LEICESTER-CITY.png" alt="Leicester City" /> Leicester City</td>
+                                        <td>Leicester City</td>
                                         <td>2</td>
                                         <td>5</td>
                                         <td>21</td>
@@ -71,7 +75,7 @@
                                         <td>32</td>
                                     </tr>
                                     <tr>
-                                        <td><img src="https://crests.football-data.org/VILLARREAL.png" alt="Villareal" /> Villareal</td>
+                                        <td>Villareal</td>
                                         <td>8</td>
                                         <td>2</td>
                                         <td>10</td>
@@ -85,6 +89,7 @@
                     <div class="card shadow mb-4 custom-card">
                         <div class="card-body">
                             <table class="table table-dark table-hover">
+                                <caption class="table-caption">Atacantes</caption>
                                 <thead>
                                     <tr>
                                         <th>Team</th>
@@ -98,7 +103,7 @@
                                 <tbody>
                                     <!-- Atacantes data goes here -->
                                     <tr>
-                                        <td><img src="https://crests.football-data.org/ATLETICO-MADRID.png" alt="Atlético Madrid" /> Atlético Madrid</td>
+                                        <td>Atlético Madrid</td>
                                         <td>2</td>
                                         <td>1</td>
                                         <td>6</td>
@@ -106,7 +111,7 @@
                                         <td>38</td>
                                     </tr>
                                     <tr>
-                                        <td><img src="https://crests.football-data.org/REAL-MADRID.png" alt="Real Madrid" /> Real Madrid</td>
+                                        <td>Real Madrid</td>
                                         <td>4</td>
                                         <td>3</td>
                                         <td>7</td>
@@ -114,7 +119,7 @@
                                         <td>37</td>
                                     </tr>
                                     <tr>
-                                        <td><img src="https://crests.football-data.org/BARCELONA.png" alt="Barcelona" /> Barcelona</td>
+                                        <td>Barcelona</td>
                                         <td>4</td>
                                         <td>4</td>
                                         <td>9</td>
@@ -122,7 +127,7 @@
                                         <td>34</td>
                                     </tr>
                                     <tr>
-                                        <td><img src="https://crests.football-data.org/VILLARREAL.png" alt="Villareal" /> Villareal</td>
+                                        <td>Villareal</td>
                                         <td>8</td>
                                         <td>2</td>
                                         <td>10</td>
@@ -135,7 +140,7 @@
                     </div>
                 </div>
                 <!-- Coluna do meio: Escale seu time -->
-                <div class="col-lg-2" style="max-width: 750px;">
+                <div class="col-md-3" style="max-width: 750px;">
                     <section class="banner">
                         <div class="container">
                             <div class="text">
@@ -147,86 +152,29 @@
                             </div>
                         </div>
                     </section>
-
                     <section class="games">
                         <h3>Próximos jogos</h3>
                         <div class="game">
-                            <div class="game.team">
-
-                                <h4>Barcelona</h4>
+                            <div class="game-content">
+                                <div class="team-name">Barcelona</div>
+                                <div class="vs">vs</div> <!-- Adicionando uma classe vs -->
+                                <div class="team-name">Real Madrid</div>
                             </div>
-                            <div class="game.vs">VS</div>
-                            <div class="game.team">
-
-                                <h4>Real Madrid</h4>
+                            <div class="match-time">
+                                <span>5:00 PM</span>
+                                <i class="fa fa-map-marker" style="margin-right: 5px;"></i>
+                                 <span>Spain</span>
                             </div>
-                            <div class="game.info">
-                                <div class="game.info.time"><i class="fas fa-clock"></i> 5:00 PM</div>
-                                <div class="game.info.location"><i class="fas fa-map-marker-alt"></i> Spain</div>
-                                <div class="game.info.like"><i class="fas fa-heart"></i></div>
-                                <div class="game.info.view-details">
-                                    <button><i class="fas fa-eye"></i> View Details</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game">
-                            <div class="game.team">
-
-                                <h4>NY Yorks</h4>
-                            </div>
-                            <div class="game.vs">VS</div>
-                            <div class="game.team">
-
-                                <h4>NY Yorks</h4>
-                            </div>
-                            <div class="game.info">
-                                <div class="game.info.time"><i class="fas fa-clock"></i> 5:00 PM</div>
-                                <div class="game.info.location"><i class="fas fa-map-marker-alt"></i> London</div>
-                                <div class="game.info.like"><i class="fas fa-heart"></i></div>
-                                <div class="game.info.view-details">
-                                    <button><i class="fas fa-eye"></i> View Details</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game">
-                            <div class="game.team">
-
-                                <h4>NY Yorks</h4>
-                            </div>
-                            <div class="game.vs">VS</div>
-                            <div class="game.team">
-
-                                <h4>NY Yorks</h4>
-                            </div>
-                            <div class="game.info">
-                                <div class="game.info.time"><i class="fas fa-clock"></i> 5:00 PM</div>
-                                <div class="game.info.location"><i class="fas fa-map-marker-alt"></i> London</div>
-                                <div class="game.info.like"><i class="fas fa-heart"></i></div>
-                                <div class="game.info.view-details">
-                                    <button><i class="fas fa-eye"></i> View Details</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game">
-                            <div class="game.team">
-
-                                <h4>NY Yorks</h4>
-                            </div>
-                            <div class="game.vs">VS</div>
-                            <div class="game.team">
-
-                                <h4>NY Yorks</h4>
-                            </div>
-                            <div class="game.info">
-                                <div class="game.info.time"><i class="fas fa-clock"></i> 5:00 PM</div>
-                                <div class="game.info.location"><i class="fas fa-map-marker-alt"></i> London</div>
-                                <div class="game.info.like"><i class="fas fa-heart"></i></div>
-                                <div class="game.info.view-details">
+                            <div class="game-info">
+                                <div class="game-info-like"><i class="fas fa-heart"></i></div>
+                                <div class="game-info-view-details">
                                     <button><i class="fas fa-eye"></i> View Details</button>
                                 </div>
                             </div>
                         </div>
                     </section>
+                    
+                    
                 </div>
             </div>
         </div>
