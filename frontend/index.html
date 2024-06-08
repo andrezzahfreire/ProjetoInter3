@@ -1,263 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>DataFut</title>
-
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futebol</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
-<body id="page-top">
-
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-futbol"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">DataFut</div>
-            </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="escalar.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Sua Escalação</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-        </ul>
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
-            <div id="content">
-
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                </nav>
-                <!-- End of Topbar -->
-                <div class="container-fluid">
-
-                    <!-- Header Container -->
-                    <div class="header-container">
-                        <div class="banner">
-                            <h1 class="textBanner">ESCALE</h1>
-                            <h1 class="textBanner">SEU TIME</h1>
-                        </div>
-
-                        <!-- Best Teams Section -->
-                        <section class="sidebar">
-                            <div class="best-teams">
-                                <h2>As melhores Escalações</h2>
-                                <span>Por rodada</span>
-                                <i class="fas fa-futbol"></i>
-                            </div>
-                        </section>
-                    </div>
-
-
-                    <div class="row">
-
-                        <!-- Goleiros and Atacantes Section -->
-                        <div class="col-xl-12 col-lg-12">
-                            <div class="card-deck">
-                                <!-- Goleiros Section -->
-                                <div class="card shadow mb-4">
-                                    <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">Goleiros</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <table class="table table-dark table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>Team</th>
-                                                    <th>D</th>
-                                                    <th>G</th>
-                                                    <th>Ga</th>
-                                                    <th>Gd</th>
-                                                    <th>Pts</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <!-- Goleiros data goes here -->
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-
-                                <!-- Atacantes Section -->
-                                <div class="card shadow mb-4">
-                                    <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">Atacantes</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <table class="table table-dark table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>Team</th>
-                                                    <th>D</th>
-                                                    <th>L</th>
-                                                    <th>Ga</th>
-                                                    <th>Gd</th>
-                                                    <th>Pts</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <!-- Atacantes data goes here -->
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Upcoming Matches Section -->
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Próximos jogos</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="match-card">
-                                        <div class="team">
-                                            <img src="" alt="Barcelona Logo">
-                                            <div class="team-name">Barcelona</div>
-                                            <div class="team-name">vs</div>
-                                            <div class="team-name">Real Madrid</div>
-                                            <img src="" alt="Real Madrid Logo">
-                                        </div>
-                                        <div class="match-time">
-                                            <span>5:00 PM</span> <span>Spain</span>
-                                        </div>
-                                        <button class="btn btn-primary btn-block">View Details</button>
-                                    </div>
-                                </div>
-                            </div>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Procure jogos, jogadores...">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End of Main Content -->
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <!-- Goleiros e Atacantes Section -->
+                <div class="col-lg-3">
+                    <div class="card shadow mb-4 custom-card">
+                        <div class="card-body">
+                            <table class="table table-dark table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Team</th>
+                                        <th>D</th>
+                                        <th>L</th>
+                                        <th>Ga</th>
+                                        <th>Gd</th>
+                                        <th>Pts</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Goleiros data goes here -->
+                                    <tr>
+                                        <td><img src="https://crests.football-data.org/LIVERPOOL.png" alt="Liverpool" /> Liverpool</td>
+                                        <td>6</td>
+                                        <td>2</td>
+                                        <td>21</td>
+                                        <td>16</td>
+                                        <td>33</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="https://crests.football-data.org/MANCHESTER-UNITED.png" alt="Man United" /> Man United</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>24</td>
+                                        <td>9</td>
+                                        <td>33</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="https://crests.football-data.org/LEICESTER-CITY.png" alt="Leicester City" /> Leicester City</td>
+                                        <td>2</td>
+                                        <td>5</td>
+                                        <td>21</td>
+                                        <td>10</td>
+                                        <td>32</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="https://crests.football-data.org/VILLARREAL.png" alt="Villareal" /> Villareal</td>
+                                        <td>8</td>
+                                        <td>2</td>
+                                        <td>10</td>
+                                        <td>16</td>
+                                        <td>32</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card shadow mb-4 custom-card">
+                        <div class="card-body">
+                            <table class="table table-dark table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Team</th>
+                                        <th>D</th>
+                                        <th>L</th>
+                                        <th>Ga</th>
+                                        <th>Gd</th>
+                                        <th>Pts</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Atacantes data goes here -->
+                                    <tr>
+                                        <td><img src="https://crests.football-data.org/ATLETICO-MADRID.png" alt="Atlético Madrid" /> Atlético Madrid</td>
+                                        <td>2</td>
+                                        <td>1</td>
+                                        <td>6</td>
+                                        <td>23</td>
+                                        <td>38</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="https://crests.football-data.org/REAL-MADRID.png" alt="Real Madrid" /> Real Madrid</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>7</td>
+                                        <td>15</td>
+                                        <td>37</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="https://crests.football-data.org/BARCELONA.png" alt="Barcelona" /> Barcelona</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>9</td>
+                                        <td>20</td>
+                                        <td>34</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="https://crests.football-data.org/VILLARREAL.png" alt="Villareal" /> Villareal</td>
+                                        <td>8</td>
+                                        <td>2</td>
+                                        <td>10</td>
+                                        <td>16</td>
+                                        <td>32</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Coluna do meio: Escale seu time -->
+                <div class="col-lg-2" style="max-width: 750px;">
+                    <section class="banner">
+                        <div class="container">
+                            <div class="text">
+                                <h1>ESCALE</h1>
+                                <h2>SEU TIME</h2>
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-primary">Monte agora</a>
+                            </div>
+                        </div>
+                    </section>
 
+                    <section class="games">
+                        <h3>Próximos jogos</h3>
+                        <div class="game">
+                            <div class="game.team">
+
+                                <h4>Barcelona</h4>
+                            </div>
+                            <div class="game.vs">VS</div>
+                            <div class="game.team">
+
+                                <h4>Real Madrid</h4>
+                            </div>
+                            <div class="game.info">
+                                <div class="game.info.time"><i class="fas fa-clock"></i> 5:00 PM</div>
+                                <div class="game.info.location"><i class="fas fa-map-marker-alt"></i> Spain</div>
+                                <div class="game.info.like"><i class="fas fa-heart"></i></div>
+                                <div class="game.info.view-details">
+                                    <button><i class="fas fa-eye"></i> View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game">
+                            <div class="game.team">
+
+                                <h4>NY Yorks</h4>
+                            </div>
+                            <div class="game.vs">VS</div>
+                            <div class="game.team">
+
+                                <h4>NY Yorks</h4>
+                            </div>
+                            <div class="game.info">
+                                <div class="game.info.time"><i class="fas fa-clock"></i> 5:00 PM</div>
+                                <div class="game.info.location"><i class="fas fa-map-marker-alt"></i> London</div>
+                                <div class="game.info.like"><i class="fas fa-heart"></i></div>
+                                <div class="game.info.view-details">
+                                    <button><i class="fas fa-eye"></i> View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game">
+                            <div class="game.team">
+
+                                <h4>NY Yorks</h4>
+                            </div>
+                            <div class="game.vs">VS</div>
+                            <div class="game.team">
+
+                                <h4>NY Yorks</h4>
+                            </div>
+                            <div class="game.info">
+                                <div class="game.info.time"><i class="fas fa-clock"></i> 5:00 PM</div>
+                                <div class="game.info.location"><i class="fas fa-map-marker-alt"></i> London</div>
+                                <div class="game.info.like"><i class="fas fa-heart"></i></div>
+                                <div class="game.info.view-details">
+                                    <button><i class="fas fa-eye"></i> View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game">
+                            <div class="game.team">
+
+                                <h4>NY Yorks</h4>
+                            </div>
+                            <div class="game.vs">VS</div>
+                            <div class="game.team">
+
+                                <h4>NY Yorks</h4>
+                            </div>
+                            <div class="game.info">
+                                <div class="game.info.time"><i class="fas fa-clock"></i> 5:00 PM</div>
+                                <div class="game.info.location"><i class="fas fa-map-marker-alt"></i> London</div>
+                                <div class="game.info.like"><i class="fas fa-heart"></i></div>
+                                <div class="game.info.view-details">
+                                    <button><i class="fas fa-eye"></i> View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
     <footer>
         <div class="container">
             <p>© 2023 Futebol. Todos os direitos reservados.</p>
         </div>
     </footer>
-    <!-- End of Content Wrapper -->
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>
