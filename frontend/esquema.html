@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #151515;
+            background-color: #f8f9fa;
         }
 
         .container {
@@ -96,8 +96,12 @@
             color: white;
             font-weight: bold;
             font-size: 1.2em;
+            display: none;
         }
 
+        .esquema.selected .check-mark {
+            display: flex;
+        }
     </style>
 </head>
 <body>
@@ -106,13 +110,14 @@
         <h2 class="text-center mb-4">ESQUEMA TÁTICO</h2>
 
         <div class="row esquemas">
-            <div class="col-md-2 esquema">
+            <div class="col-md-2 esquema" onclick="selectEsquema(this)">
                 <div class="card">
                     <div class="card-header">
                         3-4-3
                     </div>
                     <div class="card-body">
                         <div class="campo-futebol">
+                            <div class="check-mark">&#10003;</div>
                             <div class="circulo" style="top: 20%; left: 40%;"></div>
                             <div class="circulo" style="top: 20%; left: 50%;"></div>
                             <div class="circulo" style="top: 20%; left: 60%;"></div>
@@ -130,13 +135,14 @@
                 </div>
             </div>
 
-            <div class="col-md-2 esquema">
+            <div class="col-md-2 esquema" onclick="selectEsquema(this)">
                 <div class="card">
                     <div class="card-header">
                         3-5-2
                     </div>
                     <div class="card-body">
                         <div class="campo-futebol">
+                            <div class="check-mark">&#10003;</div>
                             <div class="circulo" style="top: 20%; left: 40%;"></div>
                             <div class="circulo" style="top: 20%; left: 50%;"></div>
                             <div class="circulo" style="top: 20%; left: 60%;"></div>
@@ -154,13 +160,14 @@
                 </div>
             </div>
 
-            <div class="col-md-2 esquema">
+            <div class="col-md-2 esquema" onclick="selectEsquema(this)">
                 <div class="card">
                     <div class="card-header">
                         4-3-3
                     </div>
                     <div class="card-body">
                         <div class="campo-futebol">
+                            <div class="check-mark">&#10003;</div>
                             <div class="circulo" style="top: 20%; left: 35%;"></div>
                             <div class="circulo" style="top: 20%; left: 45%;"></div>
                             <div class="circulo" style="top: 20%; left: 55%;"></div>
@@ -179,7 +186,7 @@
                 </div>
             </div>
 
-            <div class="col-md-2 esquema selected">
+            <div class="col-md-2 esquema" onclick="selectEsquema(this)">
                 <div class="card">
                     <div class="card-header">
                         4-4-2
@@ -205,13 +212,14 @@
                 </div>
             </div>
 
-            <div class="col-md-2 esquema">
+            <div class="col-md-2 esquema" onclick="selectEsquema(this)">
                 <div class="card">
                     <div class="card-header">
                         4-5-1
                     </div>
                     <div class="card-body">
                         <div class="campo-futebol">
+                            <div class="check-mark">&#10003;</div>
                             <div class="circulo" style="top: 20%; left: 35%;"></div>
                             <div class="circulo" style="top: 20%; left: 45%;"></div>
                             <div class="circulo" style="top: 20%; left: 55%;"></div>
@@ -230,13 +238,14 @@
                 </div>
             </div>
 
-            <div class="col-md-2 esquema">
+            <div class="col-md-2 esquema" onclick="selectEsquema(this)">
                 <div class="card">
                     <div class="card-header">
                         5-3-2
                     </div>
                     <div class="card-body">
                         <div class="campo-futebol">
+                            <div class="check-mark">&#10003;</div>
                             <div class="circulo" style="top: 20%; left: 30%;"></div>
                             <div class="circulo" style="top: 20%; left: 40%;"></div>
                             <div class="circulo" style="top: 20%; left: 50%;"></div>
@@ -256,13 +265,14 @@
                 </div>
             </div>
 
-            <div class="col-md-2 esquema">
+            <div class="col-md-2 esquema" onclick="selectEsquema(this)">
                 <div class="card">
                     <div class="card-header">
                         5-4-1
                     </div>
                     <div class="card-body">
                         <div class="campo-futebol">
+                            <div class="check-mark">&#10003;</div>
                             <div class="circulo" style="top: 20%; left: 30%;"></div>
                             <div class="circulo" style="top: 20%; left: 40%;"></div>
                             <div class="circulo" style="top: 20%; left: 50%;"></div>
@@ -284,6 +294,19 @@
         </div>
 
     </div>
+
+    <script>
+        function selectEsquema(element) {
+            // Remove the selected class from all elements
+            var esquemas = document.querySelectorAll('.esquema');
+            esquemas.forEach(function(esquema) {
+                esquema.classList.remove('selected');
+            });
+
+            // Add the selected class to the clicked element
+            element.classList.add('selected');
+        }
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
