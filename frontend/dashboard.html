@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dash.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>VEJA AS ESTATÍSTICAS</h1>
+            <h2>PABLO VEGETTI</h2>
+        </header>
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-value">75</div>
+                <div class="stat-label">Total Orders</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">357</div>
+                <div class="stat-label">Total Delivered</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">65</div>
+                <div class="stat-label">Total Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">$128</div>
+                <div class="stat-label">Total Revenue</div>
+            </div>
+        </section>
+        <section class="charts">
+            <div class="chart-card">
+                <canvas id="pieChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <canvas id="lineChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <canvas id="radarChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <canvas id="barChart"></canvas>
+            </div>
+        </section>
+    </div>
+    <script src="script/dash.js"></script>
+</body>
+</html>
