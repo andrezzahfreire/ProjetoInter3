@@ -4,13 +4,13 @@
     <br />
     <br />
     <a href="[URL do Projeto]">
-     <img src="[URL da Imagem de Capa]" alt="Imagem de Capa" style="display: block; margin: auto;"/>
+     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Football_Pallo_valmiina-cropped.jpg/255px-Football_Pallo_valmiina-cropped.jpg" alt="Imagem de Capa" style="display: block; margin: auto;"/>
     </a>
   </h1>
 </div>
 
 <p align="center">
-   <img src="http://img.shields.io/static/v1?label=STATUS&message=[STATUS DO PROJETO]&color=[COR]&style=for-the-badge" #vitrinedev/>
+   <img src="http://img.shields.io/static/v1?label=STATUS&message=PRE-RELEASE&color=[COR]&style=for-the-badge" #vitrinedev/>
 </p>
   
 # Índice 
@@ -27,54 +27,47 @@
 # Descrição do Projeto
 
 <b>- Projeto de Software:</b>
-Um site baseado em sites de jogos e apostas como por exemplo, sofascore, cartola, blaze, entre outros, que visa análisar partidas passadas e futuras de futebol, utilizando dados raspados.
+Um site baseado em sites  que visa analisar partidas passadas, utilizando dados raspados do site https://fbref.com/
 
 <b>- Finalidade:</b>
-  - Analisar e documentar jogos passados e com base nessas análises iremos prever possíveis resultados de futuros jogos.
+  - Analisar as estatisticas de jogadores da serie A do brasileirão com base no ano de 2023.
 
 <b>- Funcionalidades principais:</b>
   - Raspagem e processamento de dados
-    - De jogos antigos
-    - De jogos recentes
-  - Predição de jogos e possíveis resultados
+    - De jogos da série A do brasileirão 
+  - Analise de estatisticas dos jogadores
 
 # :hammer_and_wrench: Status do Projeto
-<b>Progresso:</b> 5%
+<b>Progresso:</b> 90%
 
 <b>Etapa atual:</b>
-O projeto está em processo de idealização
+O projeto está em processo de refinamento estrutural
 
 <b>Próxima etapa:</b>
-Wireframe do projeto (Figma)
+Apresentação Interdisciplinar
 
-# :hammer:  Funcionalidades e Demonstração da Aplicação
-
-- :heavy_check_mark: `Funcionalidade 1`: [Breve descrição da funcionalidade]
-- :heavy_check_mark: `Funcionalidade 2`: [Breve descrição da funcionalidade]
-
-<div align="center"> [Inserir GIF ou imagem demonstrando a aplicação, se disponível] </div>
-
-# 📁 Acesso ao Projeto
-
-Você pode [acessar o projeto aqui](URL_DO_PROJETO).
-<br>
-Você pode [acessar o wireframe aqui](https://www.figma.com/file/R0l45b7SrWJpOdrCFlJhns/DataFut---Wireframe?type=design&node-id=0%3A1&mode=design&t=zMSAmXy2YUudg5on-1).
-
-# 🚀 Instruções de Instalação
-
-**Instruções para instalar e executar o projeto localmente, se aplicável**
 
 # :heavy_check_mark: Tecnologias Utilizadas
 
-- `Tecnologia 1`
-- `Tecnologia 2`
-- `Tecnologia 3`
+- `Python`
+- `Java`
+- `Javascript`
+- `HTML & CSS`
+- `Spring Booot`
+- `Docker`
+- `SQL`
+- `Postgree`
+- `Bootstrap`
+
 
 # Contribuidores
 
-| [<img loading="lazy" src="[URL_DA_IMAGEM]" width=115><br><sub>Nome do Contribuidor</sub>](Link_do_Perfil) |  
-| :---: |
+[Andrezza Freire](https://github.com/andrezzahfreire/)|
+[Felipe Botelho](https://github.com/FelipeBotelho94)|
+|[Gabriel Fuzita](https://github.com/Gafucha)|
+|[Lorena Guedes](https://github.com/lorenaguedes/)| 
+|[Lorena Guedes](https://github.com/lucaddonato)|
+|[Matheus Macedo](https://github.com/M-asael/)|  
 
-# Licença
 
-[Nome do Projeto] é [Licença] licensed](URL_DA_LICENÇA).
+
