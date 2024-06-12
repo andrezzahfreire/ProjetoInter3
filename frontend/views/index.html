@@ -20,7 +20,10 @@
             <div class="row">
                 <div class="col-md-9 search">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Procure jogos, jogadores...">
+                        <input type="text" class="form-control" placeholder="Procure jogos, jogadores..." list="itens">
+                        <datalist onload="nomesJogadores()" id="itens">
+                        </datalist>
+
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
                         </div>
@@ -186,5 +189,7 @@
     </footer>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
-
+<script>
+    
+</script>
 </html>
