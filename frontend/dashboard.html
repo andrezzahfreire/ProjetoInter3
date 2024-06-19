@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dash.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>VEJA AS ESTATÍSTICAS DE:</h1>
+            
+        </header>
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="nacionalidade"></div>
+                <div class="stat-label">Nacionalidade</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="posicao"></div>
+                <div class="stat-label">Posição</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="clube"></div>
+                <div class="stat-label">Clube</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="idade"></div>
+                <div class="stat-label">Idade</div>
+            </div>
+        </section>
+        <section class="charts">
+            <div class="chart-card">
+                <canvas id="pieChart"></canvas>
+            </div>
+             <div class="chart-card">
+                <canvas id="radarChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <canvas id="lineChart"></canvas>
+            </div>
+           
+            <div class="chart-card">
+                <canvas id="barChart"></canvas>
+            </div>
+        </section>
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="gE"></div>
+                <div class="stat-label">Gols esperados</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="gNE"></div>
+                <div class="stat-label">Gols normais esperados</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="gAE"></div>
+                <div class="stat-label">Gols com assistência esperados</div>
+            </div>
+        </section>
+    </div>
+    <script src="script/dash.js"></script>
+    <script>
+        let titulo = document.getElementsByClassName("header")
+        let Jogador = localStorage.getItem("jogad")
+        let html = "<h2>"+Jogador.toUpperCase()+"</h2>"
+        titulo[0].innerHTML += html
+    </script>
+</body>
+</html>
